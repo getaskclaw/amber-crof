@@ -26,9 +26,9 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 
 ## Results index
 
-| Issue | Model | Verdict |
+| Issue | Content | Verdict |
 |---|---|---|
-| [2026-W36](results/2026-W36-deepseek-v4-flash-0731.md) | deepseek-v4-flash-0731 @ high | 13/21 cases pass; $0.71; build/OPS near frontier anchor and much faster, but heavy review hallucination, no vision, tool-call leakage in no-tools settings |
+| [2026-W36](results/2026-W36.md) | Five models, full library: d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 ties frontier anchor; five cases fail everyone; same-named glm-5.3-flash differs across vendors |
 
 ## Disclaimer
 

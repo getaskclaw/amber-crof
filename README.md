@@ -27,9 +27,9 @@
 
 ## 结果索引
 
-| 期 | 模型 | 结论 |
+| 期 | 内容 | 结论 |
 |---|---|---|
-| [2026-W36](results/2026-W36-deepseek-v4-flash-0731.md) | deepseek-v4-flash-0731 @ high | 13/21 案过;$0.71;施工/OPS 接近前沿锚点且快,审查幻觉重、无视觉、no-tools 场景工具瘾 |
+| [2026-W36](results/2026-W36.md) | 五模型全库:d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 追平前沿锚点;五案全员阵亡;同名 glm-5.3-flash 跨厂商能力不同 |
 
 ## 免责
 
