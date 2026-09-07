@@ -8,13 +8,14 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 
 - Weekly (plus ad-hoc) runs of the AMBER agentic case suite (build / ops / review / vision / requirement-drift) against models served by crof.ai. **Results are always public; the cases never are.**
 - AMBER spec and case-authoring tools live at [getaskclaw/amber-eval](https://github.com/getaskclaw/amber-eval); the case contents themselves are private.
+- Sister repos: [amber-ollama](https://github.com/getaskclaw/amber-ollama) (Ollama Cloud weekly), [amber-gpt](https://github.com/getaskclaw/amber-gpt) (GPT effort-band weekly).
 - We are paying CrofAI customers, unaffiliated with the vendor. This is an independent community measurement.
 
 ## Publishing red lines (a violation means retract-and-correct)
 
 1. **We publish**: scores, aggregates, cost, speed, and qualitative behavioral verdicts.
 2. **We never publish**: case contents, raw model transcripts, or grading oracles. Model outputs can echo the prompts, so raw outputs never leave the private zone.
-3. **Every issue pins**: model id, effort, UTC time window, harness identity, and per-case bundle hashes — checkable against the public hash manifest in amber-eval, so anyone can verify the case set did not change.
+3. **Every issue pins**: model id, effort, UTC time window, harness identity, and per-case bundle hashes — checkable against the public hash manifest in [amber-eval](https://github.com/getaskclaw/amber-eval), so anyone can verify the case set did not change.
 4. **Case IDs and suite structure stay private**: public results refer to cases only by stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes; internal case IDs, variant names, and task descriptions never appear.
 5. **Tone = community measurement**: we report numbers and observed behavior, we don't attack vendors; findings are reproduced before publication.
 
