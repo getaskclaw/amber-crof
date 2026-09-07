@@ -29,7 +29,7 @@
 
 | 期 | 内容 | 结论 |
 |---|---|---|
-| [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（锚点 15/21);glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
+| [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（追平锚点 14/21);glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
 
 ## 免责
 
