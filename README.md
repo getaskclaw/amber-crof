@@ -6,33 +6,33 @@
 
 ## 这是什么
 
-- 每周(外加不定期触发)用 AMBER 案例库对 crof.ai 的模型跑一轮,**结果永远公开,题目永不公开**。
-- AMBER 是 agentic 实战题库(施工/运维/审查/视觉/需求漂移),规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber);考题本体私有。
-- 姐妹仓:[amber-ollama](https://github.com/getaskclaw/amber-ollama)(Ollama Cloud 周测)、[amber-gpt](https://github.com/getaskclaw/amber-gpt)(GPT 档位周测)。
-- 我们是 crof 的付费用户,与 CrofAI 无隶属关系;这是独立第三方社区周测。
+- 每周（外加不定期触发）用 AMBER 案例库对 crof.ai 的模型跑一轮，**结果永远公开，题目永不公开**。
+- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
+- 姐妹仓：[amber-ollama](https://github.com/getaskclaw/amber-ollama)（Ollama Cloud 周测）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)（GPT 档位周测）。
+- 我们是 crof 的付费用户，与 CrofAI 无隶属关系；这是独立第三方社区周测。
 
-## 红线(发布纪律,违反即撤稿更正)
+## 红线（发布纪律，违反即撤稿更正）
 
-1. **只公开**:分数、聚合统计、成本、速度、定性行为裁决。
-2. **永不公开**:题目内容、模型原始输出(transcript)、判分逻辑(oracle)。模型复述会带出题目原文,所以原始输出一律不出私域。
-3. **每期钉死**:model id、effort、UTC 时间窗、harness 标识、每案 bundle 哈希——对照 [amber](https://github.com/getaskclaw/amber) 公开哈希清单,任何人可验证题目集未被更换。
-4. **案号与题目结构属私有面**:公开结果里案例只用稳定别名(A-xxxxxxxx,哈希派生)+bundle 哈希作句柄;内部案号、变体名、题目描述永不出现。
-5. **基调 = 社区周测**:陈述数字与观察到的行为,不攻击厂商;发现问题先可复现再发布。
+1. **只公开**：分数、聚合统计、成本、速度、定性行为裁决。
+2. **永不公开**：题目内容、模型原始输出（transcript）、判分逻辑（oracle）。模型复述会带出题目原文，所以原始输出一律不出私域。
+3. **每期钉死**:model id、effort、UTC 时间窗、harness 标识、每案 bundle 哈希——对照 [amber](https://github.com/getaskclaw/amber) 公开哈希清单，任何人可验证题目集未被更换。
+4. **案号与题目结构属私有面**：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
+5. **基调 = 社区周测**：陈述数字与观察到的行为，不攻击厂商；发现问题先可复现再发布。
 
 ## 怎么读结果
 
-- 一案一卷;required checks 全绿才算过(bonus 不计入)。多卷案例(一案多变体)全绿才算一案过。
-- n=1 单次,存在噪声;偶发空响应按规则补考重放,并在当期文中标注。
-- 成本以 crof 响应里 `usage.cost` 的服务端账单口径为准;价格为发布时 crof.ai/pricing 快照,实时价以官网为准。
-- 对照列「frontier ref」= 我们内部同题同档的 OpenAI 前沿模型参考席位,仅作锚点,不构成对该厂商的评价。
+- 一案一卷；required checks 全绿才算过（bonus 不计入）。多卷案例（一案多变体）全绿才算一案过。
+- n=1 单次，存在噪声；偶发空响应按规则补考重放，并在当期文中标注。
+- 成本以 crof 响应里 `usage.cost` 的服务端账单口径为准；价格为发布时 crof.ai/pricing 快照，实时价以官网为准。
+- 对照列「frontier ref」= 我们内部同题同档的 OpenAI 前沿模型参考席位，仅作锚点，不构成对该厂商的评价。
 
 ## 结果索引
 
 | 期 | 内容 | 结论 |
 |---|---|---|
-| [2026-W36](results/2026-W36.md) | 五模型全库:d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首(追平锚点 14/21);glm-5.3-flash 13/21 含 crof 首个 UI 案通过;四案全员阵亡;同名 glm-5.3-flash 跨厂商能力不同 |
-| [2026-W37](results/2026-W37.md) | 新增 2 运维案补考(补齐 23 案) | qwen3.8-27b 16/23 并列第二;d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三;6 卷成本 $0.044 |
+| [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（追平锚点 14/21）；glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
+| [2026-W37](results/2026-W37.md) | 新增 2 运维案补考（补齐 23 案） | qwen3.8-27b 16/23 并列第二；d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三；6 卷成本 $0.044 |
 
 ## 免责
 
-独立测试,样本量小,不构成采购建议。厂商阵容与价格随时变动,以 [crof.ai/pricing](https://crof.ai/pricing) 实时页为准。
+独立测试，样本量小，不构成采购建议。厂商阵容与价格随时变动，以 [crof.ai/pricing](https://crof.ai/pricing) 实时页为准。
