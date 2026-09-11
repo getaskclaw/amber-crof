@@ -1,0 +1,215 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": [
+   "W37 report card: qwen3.8-27b leads at 16/23",
+   "(23-case library; small label = W36 21 cases + 2-case makeup, blended)"
+  ],
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "qwen3.8-27b 14+2=16; deepseek-v4-flash-0731 13+2=15; glm-5.3-flash 13+1=14 (effort=high)",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "data": {
+  "values": [
+   {
+    "model": "qwen3.8-27b",
+    "pass": 16,
+    "note": "14+2"
+   },
+   {
+    "model": "deepseek-v4-flash-0731",
+    "pass": 15,
+    "note": "13+2"
+   },
+   {
+    "model": "glm-5.3-flash",
+    "pass": 14,
+    "note": "13+1"
+   }
+  ]
+ },
+ "width": 600,
+ "height": 300,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "model",
+     "type": "nominal",
+     "sort": [
+      "qwen3.8-27b",
+      "deepseek-v4-flash-0731",
+      "glm-5.3-flash"
+     ],
+     "axis": {
+      "title": null,
+      "labelFontSize": 13,
+      "labelLimit": 0
+     }
+    },
+    "y": {
+     "field": "pass",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "cases passed (/ 23)",
+      "values": [
+       0,
+       5,
+       10,
+       15,
+       20,
+       23
+      ]
+     }
+    },
+    "color": {
+     "field": "model",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "deepseek-v4-flash-0731",
+       "glm-5.3-flash"
+      ],
+      "range": [
+       "#00838F",
+       "#E67E22",
+       "#6A5ACD"
+      ]
+     },
+     "legend": null
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "bottom",
+    "dy": -5,
+    "fontSize": 13,
+    "color": "#006064"
+   },
+   "encoding": {
+    "x": {
+     "field": "model",
+     "type": "nominal",
+     "sort": [
+      "qwen3.8-27b",
+      "deepseek-v4-flash-0731",
+      "glm-5.3-flash"
+     ],
+     "axis": {
+      "title": null,
+      "labelFontSize": 13,
+      "labelLimit": 0
+     }
+    },
+    "y": {
+     "field": "pass",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "cases passed (/ 23)",
+      "values": [
+       0,
+       5,
+       10,
+       15,
+       20,
+       23
+      ]
+     }
+    },
+    "text": {
+     "field": "pass",
+     "type": "quantitative"
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "bottom",
+    "dy": -22,
+    "fontSize": 10,
+    "color": "#8D6E63"
+   },
+   "encoding": {
+    "x": {
+     "field": "model",
+     "type": "nominal",
+     "sort": [
+      "qwen3.8-27b",
+      "deepseek-v4-flash-0731",
+      "glm-5.3-flash"
+     ],
+     "axis": {
+      "title": null,
+      "labelFontSize": 13,
+      "labelLimit": 0
+     }
+    },
+    "y": {
+     "field": "pass",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "cases passed (/ 23)",
+      "values": [
+       0,
+       5,
+       10,
+       15,
+       20,
+       23
+      ]
+     }
+    },
+    "text": {
+     "field": "note",
+     "type": "nominal"
+    }
+   }
+  }
+ ]
+}

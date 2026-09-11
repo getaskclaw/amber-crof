@@ -1,0 +1,574 @@
+{
+ "$schema": "https://vega.github.io/schema/vega/v5.json",
+ "background": "white",
+ "width": 520,
+ "height": 520,
+ "padding": 80,
+ "title": {
+  "text": [
+   "Face profile: pass rate by case face",
+   "(W36 21 cases + W37 2-case makeup, 23 in total)"
+  ],
+  "fontSize": 16,
+  "anchor": "start",
+  "offset": 14,
+  "font": "Noto Sans CJK SC",
+  "subtitleFont": "Noto Sans CJK SC"
+ },
+ "signals": [
+  {
+   "name": "radius",
+   "update": "width / 2"
+  }
+ ],
+ "data": [
+  {
+   "name": "table",
+   "values": [
+    {
+     "key": "text",
+     "category": "qwen3.8-27b",
+     "value": 1.0
+    },
+    {
+     "key": "build",
+     "category": "qwen3.8-27b",
+     "value": 0.833
+    },
+    {
+     "key": "verify",
+     "category": "qwen3.8-27b",
+     "value": 0.333
+    },
+    {
+     "key": "review",
+     "category": "qwen3.8-27b",
+     "value": 0.5
+    },
+    {
+     "key": "vision",
+     "category": "qwen3.8-27b",
+     "value": 0.0
+    },
+    {
+     "key": "ops",
+     "category": "qwen3.8-27b",
+     "value": 0.833
+    },
+    {
+     "key": "req-drift",
+     "category": "qwen3.8-27b",
+     "value": 1.0
+    },
+    {
+     "key": "UI build",
+     "category": "qwen3.8-27b",
+     "value": 0.0
+    },
+    {
+     "key": "text",
+     "category": "qwen3.8-27b",
+     "value": 1.0,
+     "close": true
+    },
+    {
+     "key": "text",
+     "category": "deepseek-v4-flash-0731",
+     "value": 1.0
+    },
+    {
+     "key": "build",
+     "category": "deepseek-v4-flash-0731",
+     "value": 0.667
+    },
+    {
+     "key": "verify",
+     "category": "deepseek-v4-flash-0731",
+     "value": 0.0
+    },
+    {
+     "key": "review",
+     "category": "deepseek-v4-flash-0731",
+     "value": 0.5
+    },
+    {
+     "key": "vision",
+     "category": "deepseek-v4-flash-0731",
+     "value": 0.0
+    },
+    {
+     "key": "ops",
+     "category": "deepseek-v4-flash-0731",
+     "value": 1.0
+    },
+    {
+     "key": "req-drift",
+     "category": "deepseek-v4-flash-0731",
+     "value": 1.0
+    },
+    {
+     "key": "UI build",
+     "category": "deepseek-v4-flash-0731",
+     "value": 0.0
+    },
+    {
+     "key": "text",
+     "category": "deepseek-v4-flash-0731",
+     "value": 1.0,
+     "close": true
+    },
+    {
+     "key": "text",
+     "category": "glm-5.3-flash",
+     "value": 0.667
+    },
+    {
+     "key": "build",
+     "category": "glm-5.3-flash",
+     "value": 0.667
+    },
+    {
+     "key": "verify",
+     "category": "glm-5.3-flash",
+     "value": 0.0
+    },
+    {
+     "key": "review",
+     "category": "glm-5.3-flash",
+     "value": 0.5
+    },
+    {
+     "key": "vision",
+     "category": "glm-5.3-flash",
+     "value": 0.0
+    },
+    {
+     "key": "ops",
+     "category": "glm-5.3-flash",
+     "value": 0.833
+    },
+    {
+     "key": "req-drift",
+     "category": "glm-5.3-flash",
+     "value": 1.0
+    },
+    {
+     "key": "UI build",
+     "category": "glm-5.3-flash",
+     "value": 1.0
+    },
+    {
+     "key": "text",
+     "category": "glm-5.3-flash",
+     "value": 0.667,
+     "close": true
+    }
+   ]
+  },
+  {
+   "name": "keys",
+   "values": [
+    "text",
+    "build",
+    "verify",
+    "review",
+    "vision",
+    "ops",
+    "req-drift",
+    "UI build"
+   ]
+  },
+  {
+   "name": "ticks",
+   "values": [
+    {
+     "f": 0.25
+    },
+    {
+     "f": 0.5
+    },
+    {
+     "f": 0.75
+    },
+    {
+     "f": 1.0
+    }
+   ]
+  }
+ ],
+ "scales": [
+  {
+   "name": "angular",
+   "type": "point",
+   "domain": {
+    "data": "keys",
+    "field": "data"
+   },
+   "range": {
+    "signal": "[-PI + 0.35, PI + 0.35 - 2 * PI / 8]"
+   }
+  },
+  {
+   "name": "radial",
+   "type": "linear",
+   "domain": [
+    0,
+    1
+   ],
+   "range": {
+    "signal": "[0, radius]"
+   },
+   "zero": true,
+   "nice": false
+  },
+  {
+   "name": "color",
+   "type": "ordinal",
+   "domain": [
+    "qwen3.8-27b",
+    "deepseek-v4-flash-0731",
+    "glm-5.3-flash"
+   ],
+   "range": [
+    "#00838F",
+    "#E67E22",
+    "#6A5ACD"
+   ]
+  }
+ ],
+ "legends": [
+  {
+   "fill": "color",
+   "orient": "top-right",
+   "title": null,
+   "labelFontSize": 13,
+   "symbolSize": 120,
+   "labelLimit": 0,
+   "labelFont": "Noto Sans CJK SC"
+  }
+ ],
+ "marks": [
+  {
+   "type": "arc",
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "0.5 * height"
+     },
+     "startAngle": {
+      "value": 0
+     },
+     "endAngle": {
+      "signal": "2 * PI"
+     },
+     "innerRadius": {
+      "signal": "0.25 * radius"
+     },
+     "outerRadius": {
+      "signal": "0.25 * radius"
+     },
+     "stroke": {
+      "value": "#cfe8ec"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "arc",
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "0.5 * height"
+     },
+     "startAngle": {
+      "value": 0
+     },
+     "endAngle": {
+      "signal": "2 * PI"
+     },
+     "innerRadius": {
+      "signal": "0.5 * radius"
+     },
+     "outerRadius": {
+      "signal": "0.5 * radius"
+     },
+     "stroke": {
+      "value": "#cfe8ec"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "arc",
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "0.5 * height"
+     },
+     "startAngle": {
+      "value": 0
+     },
+     "endAngle": {
+      "signal": "2 * PI"
+     },
+     "innerRadius": {
+      "signal": "0.75 * radius"
+     },
+     "outerRadius": {
+      "signal": "0.75 * radius"
+     },
+     "stroke": {
+      "value": "#cfe8ec"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "arc",
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "0.5 * height"
+     },
+     "startAngle": {
+      "value": 0
+     },
+     "endAngle": {
+      "signal": "2 * PI"
+     },
+     "innerRadius": {
+      "signal": "1.0 * radius"
+     },
+     "outerRadius": {
+      "signal": "1.0 * radius"
+     },
+     "stroke": {
+      "value": "#9fcdd4"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "ticks"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width + 4"
+     },
+     "y": {
+      "signal": "0.5 * height - datum.f * radius"
+     },
+     "text": {
+      "signal": "format(datum.f, '.0%')"
+     },
+     "fontSize": {
+      "value": 10
+     },
+     "fill": {
+      "value": "#9ab8bd"
+     },
+     "align": {
+      "value": "left"
+     },
+     "baseline": {
+      "value": "bottom"
+     },
+     "font": {
+      "value": "Noto Sans CJK SC"
+     }
+    }
+   }
+  },
+  {
+   "type": "rule",
+   "from": {
+    "data": "keys"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "0.5 * height"
+     },
+     "x2": {
+      "signal": "0.5 * width + radius * cos(scale('angular', datum.data))"
+     },
+     "y2": {
+      "signal": "0.5 * height + radius * sin(scale('angular', datum.data))"
+     },
+     "stroke": {
+      "value": "#9fcdd4"
+     },
+     "strokeWidth": {
+      "value": 1
+     }
+    }
+   }
+  },
+  {
+   "type": "text",
+   "from": {
+    "data": "keys"
+   },
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width + (radius + 26) * cos(scale('angular', datum.data))"
+     },
+     "y": {
+      "signal": "0.5 * height + (radius + 26) * sin(scale('angular', datum.data))"
+     },
+     "text": {
+      "field": "data"
+     },
+     "fontSize": {
+      "value": 15
+     },
+     "fontWeight": {
+      "value": "bold"
+     },
+     "align": {
+      "value": "center"
+     },
+     "baseline": {
+      "value": "middle"
+     },
+     "fill": {
+      "value": "#222"
+     },
+     "font": {
+      "value": "Noto Sans CJK SC"
+     }
+    }
+   }
+  },
+  {
+   "type": "group",
+   "from": {
+    "facet": {
+     "name": "cats",
+     "data": "table",
+     "groupby": "category"
+    }
+   },
+   "marks": [
+    {
+     "type": "line",
+     "from": {
+      "data": "cats"
+     },
+     "encode": {
+      "enter": {
+       "x": {
+        "signal": "0.5 * width + scale('radial', datum.value) * cos(scale('angular', datum.key))"
+       },
+       "y": {
+        "signal": "0.5 * height + scale('radial', datum.value) * sin(scale('angular', datum.key))"
+       },
+       "stroke": {
+        "scale": "color",
+        "field": {
+         "parent": "category"
+        }
+       },
+       "strokeWidth": {
+        "value": 2.5
+       },
+       "fill": {
+        "scale": "color",
+        "field": {
+         "parent": "category"
+        }
+       },
+       "fillOpacity": {
+        "value": 0.12
+       }
+      }
+     }
+    },
+    {
+     "type": "symbol",
+     "from": {
+      "data": "cats"
+     },
+     "encode": {
+      "enter": {
+       "x": {
+        "signal": "0.5 * width + scale('radial', datum.value) * cos(scale('angular', datum.key))"
+       },
+       "y": {
+        "signal": "0.5 * height + scale('radial', datum.value) * sin(scale('angular', datum.key))"
+       },
+       "size": {
+        "value": 40
+       },
+       "fill": {
+        "scale": "color",
+        "field": {
+         "parent": "category"
+        }
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "encode": {
+    "enter": {
+     "x": {
+      "signal": "0.5 * width"
+     },
+     "y": {
+      "signal": "height + 56"
+     },
+     "text": {
+      "value": "Note: face pass rate = cases passed / cases in the face (23 in total); both ✗ and ∅ count as not passed; axes in matrix first-appearance order."
+     },
+     "fontSize": {
+      "value": 11
+     },
+     "fill": {
+      "value": "#777"
+     },
+     "align": {
+      "value": "center"
+     },
+     "font": {
+      "value": "Noto Sans CJK SC"
+     }
+    }
+   }
+  }
+ ]
+}

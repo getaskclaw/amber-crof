@@ -1,0 +1,260 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": [
+   "Weekly trend: denominators differ, normalized to pass rate",
+   "(W36 = 21 cases, W37 = blended 23)"
+  ],
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "Two points per model: W36 measured /21; W37 = W36 + makeup blended /23 (effort=high)",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "data": {
+  "values": [
+   {
+    "week": "W36",
+    "model": "qwen3.8-27b",
+    "pct": 66.7,
+    "label": "14/21 · 66.7%",
+    "dy": -14
+   },
+   {
+    "week": "W37",
+    "model": "qwen3.8-27b",
+    "pct": 69.6,
+    "label": "16/23 · 69.6%",
+    "dy": -14
+   },
+   {
+    "week": "W36",
+    "model": "deepseek-v4-flash-0731",
+    "pct": 61.9,
+    "label": "13/21 · 61.9%",
+    "dy": -14
+   },
+   {
+    "week": "W37",
+    "model": "deepseek-v4-flash-0731",
+    "pct": 65.2,
+    "label": "15/23 · 65.2%",
+    "dy": 16
+   },
+   {
+    "week": "W36",
+    "model": "glm-5.3-flash",
+    "pct": 61.9,
+    "label": "13/21 · 61.9%",
+    "dy": 16
+   },
+   {
+    "week": "W37",
+    "model": "glm-5.3-flash",
+    "pct": 60.9,
+    "label": "14/23 · 60.9%",
+    "dy": 16
+   }
+  ]
+ },
+ "width": 560,
+ "height": 300,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "mark": {
+    "type": "line",
+    "strokeWidth": 2.5
+   },
+   "encoding": {
+    "x": {
+     "field": "week",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "W36",
+       "W37"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 13
+     }
+    },
+    "y": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       55,
+       75
+      ]
+     },
+     "axis": {
+      "title": "case-level pass rate (%)"
+     }
+    },
+    "color": {
+     "field": "model",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "deepseek-v4-flash-0731",
+       "glm-5.3-flash"
+      ],
+      "range": [
+       "#00838F",
+       "#E67E22",
+       "#6A5ACD"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "labelLimit": 0
+     }
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "point",
+    "size": 110,
+    "filled": true,
+    "opacity": 1
+   },
+   "encoding": {
+    "x": {
+     "field": "week",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "W36",
+       "W37"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 13
+     }
+    },
+    "y": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       55,
+       75
+      ]
+     },
+     "axis": {
+      "title": "case-level pass rate (%)"
+     }
+    },
+    "color": {
+     "field": "model",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "deepseek-v4-flash-0731",
+       "glm-5.3-flash"
+      ],
+      "range": [
+       "#00838F",
+       "#E67E22",
+       "#6A5ACD"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "labelLimit": 0
+     }
+    }
+   }
+  },
+  {
+   "mark": {
+    "type": "text",
+    "align": "center",
+    "baseline": "middle",
+    "fontSize": 11,
+    "color": "#333"
+   },
+   "encoding": {
+    "x": {
+     "field": "week",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "W36",
+       "W37"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 13
+     }
+    },
+    "y": {
+     "field": "pct",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       55,
+       75
+      ]
+     },
+     "axis": {
+      "title": "case-level pass rate (%)"
+     }
+    },
+    "text": {
+     "field": "label",
+     "type": "nominal"
+    },
+    "dy": {
+     "field": "dy",
+     "type": "quantitative"
+    },
+    "color": {
+     "field": "model",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "deepseek-v4-flash-0731",
+       "glm-5.3-flash"
+      ],
+      "range": [
+       "#00838F",
+       "#E67E22",
+       "#6A5ACD"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "labelLimit": 0
+     }
+    }
+   }
+  }
+ ]
+}

@@ -25,6 +25,15 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 - n=1 single runs; noise exists. Occasional empty responses are retried per protocol and annotated in the issue.
 - Cost uses the server-side `usage.cost` field returned by crof. Prices are snapshots from crof.ai/pricing at publication time; the live page wins.
 
+## Charts
+
+- **Report card** (2026-W37, blended 23-case tally = W36 21 cases + 2-case makeup): qwen3.8-27b leads at 16/23, deepseek-v4-flash-0731 15/23, glm-5.3-flash 14/23 (makeup A-8c909d0a at 6/7, one check short).
+  ![W37 report card: blended 23-case bars](docs/images/scorecard-2026-w37.en.png)
+- **Face profile** (W36 21-case matrix ∪ W37 2-case makeup, grouped by face): only qwen3.8-27b passes a verify-face case (1/3, incl. the first-ever 15/15 on A-a317e74b); glm-5.3-flash holds crof's only UI-build pass; all three fail the vision face.
+  ![Face profile radar: three models](docs/images/face-profile-2026-w37.en.png)
+- **Weekly trend** (W36 to W37, normalized to pass rate as the denominators differ): qwen3.8-27b 66.7%→69.6%, d4f-0731 61.9%→65.2%, glm-5.3-flash 61.9%→60.9%.
+  ![Weekly trend: case-level pass rate](docs/images/weekly-trend-2026.en.png)
+
 ## Results index
 
 | Issue | Content | Verdict |
