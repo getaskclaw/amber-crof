@@ -8,7 +8,7 @@
 
 - 每周（外加不定期触发）用 AMBER 案例库对 crof.ai 的模型跑一轮，**结果永远公开，题目永不公开**。
 - AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
-- 姐妹仓：[amber-ollama](https://github.com/getaskclaw/amber-ollama)（Ollama Cloud 周测）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)（GPT 档位周测）、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)（WorkBuddy ACP 道）。
+- 姐妹仓：[amber-ollama](https://github.com/getaskclaw/amber-ollama)（Ollama Cloud 周测）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)（GPT 档位周测）、[amber-devin](https://github.com/getaskclaw/amber-devin)（Devin 周测）、[amber-deepseek](https://github.com/getaskclaw/amber-deepseek)（DeepSeek 官方道）、[amber-commandcode](https://github.com/getaskclaw/amber-commandcode)（CommandCode 道）、[amber-opencode](https://github.com/getaskclaw/amber-opencode)（OpenCode Go 道）、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)（WorkBuddy ACP 道）。
 - 我们是 crof 的付费用户，与 CrofAI 无隶属关系；这是独立第三方社区周测。
 
 ## 红线（发布纪律，违反即撤稿更正）
@@ -28,7 +28,7 @@
 
 ## 图说数据
 
-- **本期成绩单**（2026-W37，23 案合成口径 = W36 21 案 + 补考 2 案）：qwen3.8-27b 16/23 居首，deepseek-v4-flash-0731 15/23，glm-5.3-flash 14/23（补考 A-8c909d0a 6/7 差一钉）。
+- **本期成绩单**（2026-W37，23 案合成口径 = W36 21 案 + 补考 2 案）：qwen3.8-27b 16/23 道内居首，deepseek-v4-flash-0731 15/23，glm-5.3-flash 14/23（补考 A-8c909d0a 6/7 差一钉）。
   ![W37 成绩单：23 案合成口径柱](docs/images/scorecard-2026-w37.png)
 - **案面画像**（W36 21 案矩阵 ∪ W37 补考 2 案，按 face 聚合）：仅 qwen3.8-27b 在核验面有通过（1/3，含 A-a317e74b 史上首个 15/15）；glm-5.3-flash 握有 crof 唯一 UI 案通过；视觉面三家全挂。
   ![案面画像：三模型雷达](docs/images/face-profile-2026-w37.png)
@@ -40,7 +40,7 @@
 | 期 | 内容 | 结论 |
 |---|---|---|
 | [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（追平锚点 14/21）；glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
-| [2026-W37](results/2026-W37.md) | 新增 2 运维案补考（补齐 23 案） | qwen3.8-27b 16/23 并列第二；d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三；6 卷成本 $0.044 |
+| [2026-W37](results/2026-W37.md) | 新增 2 运维案补考（补齐 23 案） | qwen3.8-27b 16/23 并列第三（发布时为并列第二，天梯后重排）；d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三；6 卷成本 $0.044 |
 
 ## 免责
 
