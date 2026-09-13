@@ -8,7 +8,7 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 
 - Weekly (plus ad-hoc) runs of the AMBER agentic case suite (build / ops / review / vision / requirement-drift) against models served by crof.ai. **Results are always public; the cases never are.**
 - AMBER spec and case-authoring tools live at [getaskclaw/amber](https://github.com/getaskclaw/amber); the case contents themselves are private.
-- Sister repos: [amber-ollama](https://github.com/getaskclaw/amber-ollama) (Ollama Cloud weekly), [amber-gpt](https://github.com/getaskclaw/amber-gpt) (GPT effort-band weekly).
+- Sister repos: [amber-ollama](https://github, [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy) (WorkBuddy ACP lane).com/getaskclaw/amber-ollama) (Ollama Cloud weekly), [amber-gpt](https://github.com/getaskclaw/amber-gpt) (GPT effort-band weekly).
 - We are paying CrofAI customers, unaffiliated with the vendor. This is an independent community measurement.
 
 ## Publishing red lines (a violation means retract-and-correct)
