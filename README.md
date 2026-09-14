@@ -42,6 +42,10 @@
 | [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（追平锚点 14/21）；glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
 | [2026-W37](results/2026-W37.md) | 新增 2 运维案补考（补齐 23 案） | qwen3.8-27b 16/23 并列第三（发布时为并列第二，天梯后重排）；d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三；6 卷成本 $0.044 |
 
+## 分析笔记
+
+- [模型身份指纹：CrofAI 五道模型的九轴最近邻分析（2026-09）](docs/model-identity-cosine-2026-09.md)——第三方 wire 级取证之后，用已发布成绩矩阵做的行为侧对照：`glm-5.3-flash` 指纹最贴 `deepseek-v4.1-flash` 而非其同名者。[English](docs/model-identity-cosine-2026-09.en.md)
+
 ## 免责
 
 独立测试，样本量小，不构成采购建议。厂商阵容与价格随时变动，以 [crof.ai/pricing](https://crof.ai/pricing) 实时页为准。
