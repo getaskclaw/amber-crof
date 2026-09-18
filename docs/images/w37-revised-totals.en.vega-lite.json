@@ -1,0 +1,163 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "crof lane totals after the 23-case makeup (2 ops cases, $0.044)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "q38 passes both → 16/23 (tied #2 with astra); g53f splits → 14/23, drops out of the amber top-3",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 460,
+ "height": 300,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "band": "qwen3.8-27b",
+      "seg": "earned",
+      "v": 16,
+      "ord": 1
+     },
+     {
+      "band": "d4f-0731",
+      "seg": "earned",
+      "v": 15,
+      "ord": 1
+     },
+     {
+      "band": "glm-5.3-flash",
+      "seg": "earned",
+      "v": 14,
+      "ord": 1
+     }
+    ]
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "d4f-0731",
+       "glm-5.3-flash"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12
+     }
+    },
+    "y": {
+     "field": "v",
+     "type": "quantitative",
+     "aggregate": "sum",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     },
+     "axis": {
+      "title": "cases passed (/ 23)"
+     }
+    },
+    "color": {
+     "field": "seg",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "earned",
+       "confound"
+      ],
+      "range": [
+       "#5b8fc9",
+       "#e8a0a0"
+      ]
+     },
+     "legend": null
+    },
+    "order": {
+     "field": "ord",
+     "type": "quantitative"
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "band": "qwen3.8-27b",
+      "total": 16,
+      "label": "16"
+     },
+     {
+      "band": "d4f-0731",
+      "total": 15,
+      "label": "15"
+     },
+     {
+      "band": "glm-5.3-flash",
+      "total": 14,
+      "label": "14"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "dy": -8,
+    "fontSize": 13,
+    "fontWeight": "bold",
+    "color": "#333"
+   },
+   "encoding": {
+    "x": {
+     "field": "band",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "qwen3.8-27b",
+       "d4f-0731",
+       "glm-5.3-flash"
+      ]
+     }
+    },
+    "y": {
+     "field": "total",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       23
+      ]
+     }
+    },
+    "text": {
+     "field": "label"
+    }
+   }
+  }
+ ]
+}

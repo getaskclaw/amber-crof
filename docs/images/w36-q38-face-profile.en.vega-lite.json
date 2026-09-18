@@ -1,0 +1,228 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "qwen3.8-27b per-face profile (W36 crof lane, 14/21 ties the frontier anchor, $1.15)",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "the week's value king: first-ever 15/15 on the attribution case A-a317e74b — no model had maxed it before",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "face": "text",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "4/4 variants"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 · three perfect"
+     },
+     {
+      "face": "ops",
+      "v": 0.75,
+      "tier": "mid",
+      "lab": "3/4 cases"
+     },
+     {
+      "face": "verify",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "attribution 15/15 — first-ever perfect"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "one pass, one fail (-2)"
+     },
+     {
+      "face": "vision",
+      "v": 0.222,
+      "tier": "weak",
+      "lab": "-2"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "fail"
+     }
+    ]
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopRight": 3,
+    "cornerRadiusBottomRight": 3
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "text",
+       "req-drift",
+       "build",
+       "ops",
+       "verify",
+       "review",
+       "vision",
+       "ui-build"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
+    },
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "completion (pin pass-rate)",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
+    },
+    "color": {
+     "field": "tier",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "strong",
+       "mid",
+       "weak"
+      ],
+      "range": [
+       "#2e9e5b",
+       "#5b8fc9",
+       "#c0392b"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'strong':'strong (≥0.9)','mid':'mid (0.4–0.9)','weak':'weak (<0.4)'}[datum.value]"
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "text",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3"
+     },
+     {
+      "face": "req-drift",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "4/4 variants"
+     },
+     {
+      "face": "build",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 · three perfect"
+     },
+     {
+      "face": "ops",
+      "v": 0.75,
+      "tier": "mid",
+      "lab": "3/4 cases"
+     },
+     {
+      "face": "verify",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "attribution 15/15 — first-ever perfect"
+     },
+     {
+      "face": "review",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "one pass, one fail (-2)"
+     },
+     {
+      "face": "vision",
+      "v": 0.222,
+      "tier": "weak",
+      "lab": "-2"
+     },
+     {
+      "face": "ui-build",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "fail"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 6,
+    "color": "#444"
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal"
+    },
+    "x": {
+     "field": "v",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "lab"
+    }
+   }
+  }
+ ]
+}

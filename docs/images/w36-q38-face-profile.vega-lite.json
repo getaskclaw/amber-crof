@@ -1,0 +1,228 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "background": "white",
+ "title": {
+  "text": "qwen3.8-27b 面级画像（W36 crof 道，14/21 追平前沿锚点，$1.15）",
+  "fontSize": 16,
+  "anchor": "start",
+  "subtitle": "本周性价比之王：归因案 A-a317e74b 拿史上首个 15/15 满分——该案此前无人满分",
+  "subtitleFontSize": 11,
+  "subtitleColor": "#777",
+  "subtitlePadding": 6
+ },
+ "width": 480,
+ "height": 256,
+ "config": {
+  "font": "Noto Sans CJK SC",
+  "axis": {
+   "labelFontSize": 12,
+   "titleFontSize": 13
+  },
+  "legend": {
+   "labelFontSize": 12
+  },
+  "view": {
+   "stroke": null
+  }
+ },
+ "layer": [
+  {
+   "data": {
+    "values": [
+     {
+      "face": "文本",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3"
+     },
+     {
+      "face": "需求漂移",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "4/4 变体"
+     },
+     {
+      "face": "编码",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 · 三案满分"
+     },
+     {
+      "face": "运维",
+      "v": 0.75,
+      "tier": "mid",
+      "lab": "3/4 案"
+     },
+     {
+      "face": "核验",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "归因案 15/15 = 史上首个满分"
+     },
+     {
+      "face": "审查",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "一过一挂（-2）"
+     },
+     {
+      "face": "视觉",
+      "v": 0.222,
+      "tier": "weak",
+      "lab": "-2"
+     },
+     {
+      "face": "前端",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "未通过"
+     }
+    ]
+   },
+   "mark": {
+    "type": "bar",
+    "cornerRadiusTopRight": 3,
+    "cornerRadiusBottomRight": 3
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal",
+     "scale": {
+      "domain": [
+       "文本",
+       "需求漂移",
+       "编码",
+       "运维",
+       "核验",
+       "审查",
+       "视觉",
+       "前端"
+      ]
+     },
+     "axis": {
+      "title": null,
+      "labelFontSize": 12.5
+     }
+    },
+    "x": {
+     "field": "v",
+     "type": "quantitative",
+     "scale": {
+      "domain": [
+       0,
+       1.05
+      ]
+     },
+     "axis": {
+      "title": "完成度（钉过率）",
+      "values": [
+       0,
+       0.25,
+       0.5,
+       0.75,
+       1.0
+      ],
+      "grid": true
+     }
+    },
+    "color": {
+     "field": "tier",
+     "type": "nominal",
+     "scale": {
+      "domain": [
+       "strong",
+       "mid",
+       "weak"
+      ],
+      "range": [
+       "#2e9e5b",
+       "#5b8fc9",
+       "#c0392b"
+      ]
+     },
+     "legend": {
+      "title": null,
+      "orient": "bottom",
+      "offset": 10,
+      "labelExpr": "{'strong':'强（≥0.9）','mid':'中（0.4–0.9）','weak':'弱（<0.4）'}[datum.value]"
+     }
+    }
+   }
+  },
+  {
+   "data": {
+    "values": [
+     {
+      "face": "文本",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "3/3"
+     },
+     {
+      "face": "需求漂移",
+      "v": 1.0,
+      "tier": "strong",
+      "lab": "4/4 变体"
+     },
+     {
+      "face": "编码",
+      "v": 0.958,
+      "tier": "strong",
+      "lab": "5/6 · 三案满分"
+     },
+     {
+      "face": "运维",
+      "v": 0.75,
+      "tier": "mid",
+      "lab": "3/4 案"
+     },
+     {
+      "face": "核验",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "归因案 15/15 = 史上首个满分"
+     },
+     {
+      "face": "审查",
+      "v": 0.556,
+      "tier": "mid",
+      "lab": "一过一挂（-2）"
+     },
+     {
+      "face": "视觉",
+      "v": 0.222,
+      "tier": "weak",
+      "lab": "-2"
+     },
+     {
+      "face": "前端",
+      "v": 0.0,
+      "tier": "weak",
+      "lab": "未通过"
+     }
+    ]
+   },
+   "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "align": "left",
+    "dx": 6,
+    "color": "#444"
+   },
+   "encoding": {
+    "y": {
+     "field": "face",
+     "type": "ordinal"
+    },
+    "x": {
+     "field": "v",
+     "type": "quantitative"
+    },
+    "text": {
+     "field": "lab"
+    }
+   }
+  }
+ ]
+}
