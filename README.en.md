@@ -6,7 +6,9 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 
 ## What this is
 
-- Weekly (plus ad-hoc) runs of the AMBER agentic case suite (build / ops / review / vision / requirement-drift) against models served by crof.ai. **Results are always public; the cases never are.**
+- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a multi-variant case has several runs).
+
+- Weekly (plus ad-hoc) runs of the AMBER agentic case suite (build / ops / review / vision / requirement-drift (the requirements change mid-task)) against models served by crof.ai. **Results are always public; the cases never are.**
 - AMBER spec and case-authoring tools live at [getaskclaw/amber](https://github.com/getaskclaw/amber); the case contents themselves are private.
 - Sister repos: [amber-ollama](https://github.com/getaskclaw/amber-ollama) (Ollama Cloud weekly), [amber-gpt](https://github.com/getaskclaw/amber-gpt) (GPT effort-band weekly), [amber-devin](https://github.com/getaskclaw/amber-devin) (Devin lane), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek) (official DeepSeek lane), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode) (CommandCode lane), [amber-opencode](https://github.com/getaskclaw/amber-opencode) (OpenCode Go lane), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy) (WorkBuddy ACP lane), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun).
 - We are paying CrofAI customers, unaffiliated with the vendor. This is an independent community measurement.
@@ -14,7 +16,7 @@ Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the
 ## Publishing red lines (a violation means retract-and-correct)
 
 1. **We publish**: scores, aggregates, cost, speed, and qualitative behavioral verdicts.
-2. **We never publish**: case contents, raw model transcripts, or grading oracles. Model outputs can echo the prompts, so raw outputs never leave the private zone.
+2. **We never publish**: case contents, raw model transcripts (full answer logs), or grading oracles. Model outputs can echo the prompts, so raw outputs never leave the private zone.
 3. **Every issue pins**: model id, effort, UTC time window, harness identity, and per-case bundle hashes — checkable against the public hash manifest in [amber](https://github.com/getaskclaw/amber), so anyone can verify the case set did not change.
 4. **Case IDs and suite structure stay private**: public results refer to cases only by stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes; internal case IDs, variant names, and task descriptions never appear.
 5. **Tone = community measurement**: we report numbers and observed behavior, we don't attack vendors; findings are reproduced before publication.

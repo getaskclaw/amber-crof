@@ -6,16 +6,18 @@
 
 ## 这是什么
 
+- 「道」= 同一个模型名在不同家的卖场/接口；「案」= 一道题，「卷」= 一场考试记录（一案多卷 = 一道题的几个变体场次）。
+
 - 每周（外加不定期触发）用 AMBER 案例库对 crof.ai 的模型跑一轮，**结果永远公开，题目永不公开**。
-- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
+- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移——题中要求中途变化），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
 - 姐妹仓：[amber-ollama](https://github.com/getaskclaw/amber-ollama)（Ollama Cloud 周测）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)（GPT 档位周测）、[amber-devin](https://github.com/getaskclaw/amber-devin)（Devin 周测）、[amber-deepseek](https://github.com/getaskclaw/amber-deepseek)（DeepSeek 官方道）、[amber-commandcode](https://github.com/getaskclaw/amber-commandcode)（CommandCode 道）、[amber-opencode](https://github.com/getaskclaw/amber-opencode)（OpenCode Go 道）、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)（WorkBuddy ACP 道）、[amber-doubao](https://github.com/getaskclaw/amber-doubao)、[amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato)、[amber-kimi](https://github.com/getaskclaw/amber-kimi)、[amber-stepfun](https://github.com/getaskclaw/amber-stepfun)。
 - 我们是 crof 的付费用户，与 CrofAI 无隶属关系；这是独立第三方社区周测。
 
 ## 红线（发布纪律，违反即撤稿更正）
 
 1. **只公开**：分数、聚合统计、成本、速度、定性行为裁决。
-2. **永不公开**：题目内容、模型原始输出（transcript）、判分逻辑（oracle）。模型复述会带出题目原文，所以原始输出一律不出私域。
-3. **每期钉死**:model id、effort、UTC 时间窗、harness 标识、每案 bundle 哈希——对照 [amber](https://github.com/getaskclaw/amber) 公开哈希清单，任何人可验证题目集未被更换。
+2. **永不公开**：题目内容、模型原始输出（transcript（答题全过程记录））、判分逻辑（oracle（判分器））。模型复述会带出题目原文，所以原始输出一律不出私域。
+3. **每期钉死**:model id、effort、UTC 时间窗、harness（跑考试并记分的程序） 标识、每案 bundle 哈希——对照 [amber](https://github.com/getaskclaw/amber) 公开哈希清单，任何人可验证题目集未被更换。
 4. **案号与题目结构属私有面**：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
 5. **基调 = 社区周测**：陈述数字与观察到的行为，不攻击厂商；发现问题先可复现再发布。
 
