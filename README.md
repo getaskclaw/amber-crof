@@ -1,5 +1,7 @@
 # amber-crof
 
+> ⚠️ **更正（2026-10-02）**：以下考卷在作答时越出考卷、接触了判分材料，不计胜负。deepseek-v4-flash-0731 @ CrofAI（冻结道） 有 1 张卷（A-a5608487）改记 NA，成绩 15/23∅ → **14'/23∅**。原因是考场隔离缺陷，责任在我们。本页其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.md)为准。
+
 用 AMBER 私有题库对 [CrofAI](https://crof.ai/) 在售模型做的公开周测结果仓。
 
 [English README](README.en.md)

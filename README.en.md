@@ -1,5 +1,7 @@
 # amber-crof
 
+> ⚠️ **Correction (2026-10-02)**: the papers below were answered by a candidate that stepped outside its paper and touched grading material; they count neither as a pass nor as a fail. deepseek-v4-flash-0731 @ CrofAI (frozen lane): 1 paper (A-a5608487) now NA, score 15/23∅ → **14'/23∅**. The cause was an isolation defect in our exam setup; the fault is ours. The rest of this page stays as published; where they differ, the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.en.md) governs.
+
 Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the private AMBER case suite.
 
 [中文 README](README.md)
