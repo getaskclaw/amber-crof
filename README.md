@@ -1,58 +1,57 @@
+[简体中文](README.zh-CN.md) · English
+
 # amber-crof
 
-> ⚠️ **更正（2026-10-02，另一项）**：防御轴的一案 A-d511f9e8 在所有车道上改记 NA（考场判的不是考生交付的文件，判分还要求了题面没写的事）。分母不变，**过案数不变**，每条道的总分都带 `'`。本仓各期成绩表里这一格请按 NA 读，其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)为准。
+> ⚠️ **Correction (2026-10-02, second)**: one defense-axis case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the candidate delivered, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
 
-> ⚠️ **更正（2026-10-02）**：以下考卷在作答时越出考卷、接触了判分材料，不计胜负。deepseek-v4-flash-0731 @ CrofAI（冻结道） 有 1 张卷（A-a5608487）改记 NA，成绩 15/23∅ → **14'/23∅**。原因是考场隔离缺陷，责任在我们。本页其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.md)为准。
+> ⚠️ **Correction (2026-10-02)**: the papers below were answered by a candidate that stepped outside its paper and touched grading material; they count neither as a pass nor as a fail. deepseek-v4-flash-0731 @ CrofAI (frozen lane): 1 paper (A-a5608487) now NA, score 15/23∅ → **14'/23∅**. The cause was an isolation defect in our exam setup; the fault is ours. The rest of this page stays as published; where they differ, the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.en.md) governs.
 
-用 AMBER 私有题库对 [CrofAI](https://crof.ai/) 在售模型做的公开周测结果仓。
+Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the private AMBER case suite.
 
-[English README](README.en.md)
+## What this is
 
-## 这是什么
+- A 'lane' is one vendor's shop/API for a model name; a 'case' is one task, a 'run' is one sitting (a multi-variant case has several runs).
 
-- 「道」= 同一个模型名在不同家的卖场/接口；「案」= 一道题，「卷」= 一场考试记录（一案多卷 = 一道题的几个变体场次）。
+- Weekly (plus ad-hoc) runs of the AMBER agentic case suite (build / ops / review / vision / requirement-drift (the requirements change mid-task)) against models served by crof.ai. **Results are always public; the cases never are.**
+- AMBER spec and case-authoring tools live at [getaskclaw/amber](https://github.com/getaskclaw/amber); the case contents themselves are private.
+- Sister repos: [amber-ollama](https://github.com/getaskclaw/amber-ollama) (Ollama Cloud weekly), [amber-gpt](https://github.com/getaskclaw/amber-gpt) (GPT effort-band weekly), [amber-devin](https://github.com/getaskclaw/amber-devin) (Devin lane), [amber-deepseek](https://github.com/getaskclaw/amber-deepseek) (official DeepSeek lane), [amber-commandcode](https://github.com/getaskclaw/amber-commandcode) (CommandCode lane), [amber-opencode](https://github.com/getaskclaw/amber-opencode) (OpenCode Go lane), [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy) (WorkBuddy ACP lane), [amber-doubao](https://github.com/getaskclaw/amber-doubao), [amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato), [amber-kimi](https://github.com/getaskclaw/amber-kimi), [amber-stepfun](https://github.com/getaskclaw/amber-stepfun).
+- We are paying CrofAI customers, unaffiliated with the vendor. This is an independent community measurement.
 
-- 每周（外加不定期触发）用 AMBER 案例库对 crof.ai 的模型跑一轮，**结果永远公开，题目永不公开**。
-- AMBER 是 agentic 实战题库（施工/运维/审查/视觉/需求漂移——题中要求中途变化），规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)；考题本体私有。
-- 姐妹仓：[amber-ollama](https://github.com/getaskclaw/amber-ollama)（Ollama Cloud 周测）、[amber-gpt](https://github.com/getaskclaw/amber-gpt)（GPT 档位周测）、[amber-devin](https://github.com/getaskclaw/amber-devin)（Devin 周测）、[amber-deepseek](https://github.com/getaskclaw/amber-deepseek)（DeepSeek 官方道）、[amber-commandcode](https://github.com/getaskclaw/amber-commandcode)（CommandCode 道）、[amber-opencode](https://github.com/getaskclaw/amber-opencode)（OpenCode Go 道）、[amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy)（WorkBuddy ACP 道）、[amber-doubao](https://github.com/getaskclaw/amber-doubao)、[amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato)、[amber-kimi](https://github.com/getaskclaw/amber-kimi)、[amber-stepfun](https://github.com/getaskclaw/amber-stepfun)。
-- 我们是 crof 的付费用户，与 CrofAI 无隶属关系；这是独立第三方社区周测。
+## Publishing red lines (a violation means retract-and-correct)
 
-## 红线（发布纪律，违反即撤稿更正）
+1. **We publish**: scores, aggregates, cost, speed, and qualitative behavioral verdicts.
+2. **We never publish**: case contents, raw model transcripts (full answer logs), or grading oracles. Model outputs can echo the prompts, so raw outputs never leave the private zone.
+3. **Every issue pins**: model id, effort, UTC time window, harness identity, and per-case bundle hashes — checkable against the public hash manifest in [amber](https://github.com/getaskclaw/amber), so anyone can verify the case set did not change.
+4. **Case IDs and suite structure stay private**: public results refer to cases only by stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes; internal case IDs, variant names, and task descriptions never appear.
+5. **Tone = community measurement**: we report numbers and observed behavior, we don't attack vendors; findings are reproduced before publication.
 
-1. **只公开**：分数、聚合统计、成本、速度、定性行为裁决。
-2. **永不公开**：题目内容、模型原始输出（transcript（答题全过程记录））、判分逻辑（oracle（判分器））。模型复述会带出题目原文，所以原始输出一律不出私域。
-3. **每期钉死**:model id、effort、UTC 时间窗、harness（跑考试并记分的程序） 标识、每案 bundle 哈希——对照 [amber](https://github.com/getaskclaw/amber) 公开哈希清单，任何人可验证题目集未被更换。
-4. **案号与题目结构属私有面**：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
-5. **基调 = 社区周测**：陈述数字与观察到的行为，不攻击厂商；发现问题先可复现再发布。
+## How to read results
 
-## 怎么读结果
+- One case, one paper; a case passes only when all required checks are green (bonus checks excluded). Multi-variant cases pass only if every variant is green.
+- n=1 single runs; noise exists. Occasional empty responses are retried per protocol and annotated in the issue.
+- Cost uses the server-side `usage.cost` field returned by crof. Prices are snapshots from crof.ai/pricing at publication time; the live page wins.
 
-- 一案一卷；required checks 全绿才算过（bonus 不计入）。多卷案例（一案多变体）全绿才算一案过。
-- n=1 单次，存在噪声；偶发空响应按规则补考重放，并在当期文中标注。
-- 成本以 crof 响应里 `usage.cost` 的服务端账单口径为准；价格为发布时 crof.ai/pricing 快照，实时价以官网为准。
-- 对照列「frontier ref」= 我们内部同题同档的 OpenAI 前沿模型参考席位，仅作锚点，不构成对该厂商的评价。
+## Charts
 
-## 图说数据
+- **Report card** (2026-W37, blended 23-case tally = W36 21 cases + 2-case makeup): qwen3.8-27b leads the lane at 16/23, deepseek-v4-flash-0731 15/23, glm-5.3-flash 14/23 (makeup A-8c909d0a at 6/7, one check short).
+  ![W37 report card: blended 23-case bars](docs/images/scorecard-2026-w37.en.png)
+- **Face profile** (W36 21-case matrix ∪ W37 2-case makeup, grouped by face): only qwen3.8-27b passes a verify-face case (1/3, incl. the first-ever 15/15 on A-a317e74b); glm-5.3-flash holds crof's only UI-build pass; all three fail the vision face.
+  ![Face profile radar: three models](docs/images/face-profile-2026-w37.en.png)
+- **Weekly trend** (W36 to W37, normalized to pass rate as the denominators differ): qwen3.8-27b 66.7%→69.6%, d4f-0731 61.9%→65.2%, glm-5.3-flash 61.9%→60.9%.
+  ![Weekly trend: case-level pass rate](docs/images/weekly-trend-2026.en.png)
 
-- **本期成绩单**（2026-W37，23 案合成口径 = W36 21 案 + 补考 2 案）：qwen3.8-27b 16/23 道内居首，deepseek-v4-flash-0731 15/23，glm-5.3-flash 14/23（补考 A-8c909d0a 6/7 差一钉）。
-  ![W37 成绩单：23 案合成口径柱](docs/images/scorecard-2026-w37.png)
-- **案面画像**（W36 21 案矩阵 ∪ W37 补考 2 案，按 face 聚合）：仅 qwen3.8-27b 在核验面有通过（1/3，含 A-a317e74b 史上首个 15/15）；glm-5.3-flash 握有 crof 唯一 UI 案通过；视觉面三家全挂。
-  ![案面画像：三模型雷达](docs/images/face-profile-2026-w37.png)
-- **周趋势**（W36→W37，分母不同按通过率 % 归一）：qwen3.8-27b 66.7%→69.6%，d4f-0731 61.9%→65.2%，glm-5.3-flash 61.9%→60.9%。
-  ![周趋势：案级通过率](docs/images/weekly-trend-2026.png)
+## Results index
 
-## 结果索引
-
-| 期 | 内容 | 结论 |
+| Issue | Content | Verdict |
 |---|---|---|
-| [2026-W36](results/2026-W36.md) | 五模型全库：d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 居首（追平锚点 14/21）；glm-5.3-flash 13/21 含 crof 首个 UI 案通过；四案全员阵亡；同名 glm-5.3-flash 跨厂商能力不同 |
-| [2026-W37](results/2026-W37.md) | 新增 2 运维案补考（补齐 23 案） | qwen3.8-27b 16/23 并列第三（发布时为并列第二，天梯后重排）；d4f-0731 15/23;glm-5.3-flash 14/23 跌出前三；6 卷成本 $0.044 |
-| [2026-W38 更正特刊](results/2026-W38-correction.md) | W38 全库复核:本仓改判 0 格 · 挂起 6 格 | W36 五模型矩阵 6 格挂起,车道冻结 |
+| [2026-W36](results/2026-W36.md) | Five models, full library: d4f-0731 / d4f-vision-exp / glm-5.3-flash / qwen3.8-27b / qwen3.5-9b | qwen3.8-27b 14/21 leads (ties anchor at 14/21); glm-5.3-flash 13/21 incl. crof's first UI-case pass; four cases fail everyone; same-named glm-5.3-flash differs across vendors |
+| [2026-W37](results/2026-W37.md) | Makeup: the 2 new ops cases (complete the 23-case set) | qwen3.8-27b 16/23 ties #3 (was a #2 tie at publication; the board was re-seeded since); d4f-0731 15/23; glm-5.3-flash 14/23 drops off the podium; 6 papers cost $0.044 |
+| [2026-W38 correction notice](results/2026-W38-correction.en.md) | W38 full-library review: 0 cells reversed · 6 held here | 6 cells of the W36 five-model matrix held; lane frozen |
 
-## 分析笔记
+## Analysis notes
 
-- [模型身份指纹：CrofAI 五道模型的九轴最近邻分析（2026-09）](docs/model-identity-cosine-2026-09.md)——第三方 wire 级取证之后，用已发布成绩矩阵做的行为侧对照：`glm-5.3-flash` 指纹最贴 `deepseek-v4.1-flash` 而非其同名者。[English](docs/model-identity-cosine-2026-09.en.md)
+- [Model-identity fingerprints: nine-axis nearest-neighbor analysis of the CrofAI lanes (2026-09)](docs/model-identity-cosine-2026-09.en.md) — the behavioral counterpart to third-party wire-level findings, computed from published score matrices: `glm-5.3-flash`'s fingerprint sits closest to `deepseek-v4.1-flash`, not its namesake. [中文](docs/model-identity-cosine-2026-09.md)
 
-## 免责
+## Disclaimer
 
-独立测试，样本量小，不构成采购建议。厂商阵容与价格随时变动，以 [crof.ai/pricing](https://crof.ai/pricing) 实时页为准。
+Independent, small-sample testing; not procurement advice. Lineup and pricing change without notice — see [crof.ai/pricing](https://crof.ai/pricing).
