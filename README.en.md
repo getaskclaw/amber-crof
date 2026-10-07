@@ -6,6 +6,8 @@
 
 > ⚠️ **Correction (2026-10-02)**: the papers below were answered by a model that left its own paper and touched grading material; they count neither as a pass nor as a fail. deepseek-v4-flash-0731 @ CrofAI (frozen lane): 1 paper (A-a5608487) now NA, score 15/23∅ → **14'/23∅**. The cause was an isolation fault in our exam setup; the fault is ours. The rest of this page stays as published; where they differ, the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02.en.md) governs.
 
+> **2026-10-07 update**: A-cdc3d11a (review): On one review case the grader counted every sub-point of a well-formed finding as a separate unproven claim and treated real defects outside its short answer list as false alarms, so a correct, well-formatted review could not reach the passing line; the case is held on every lane, denominator unchanged, until the grader and exam room are repaired and the case is re-sat. This lane (qwen3.8-27b @ CrofAI) goes from a loss to NA (held) on this cell, not a loss; the case moves from a loss to NA on 27 lanes; no sitting is re-run and no conclusion is drawn about any model's ability. The pass count is unchanged (14'/21 on the board); losses go 6→5 and NA 1→2; the review axis stays 1/2 with 1 NA. The cell is updated in the q38 column of the Full matrix in the [2026-W36 issue](results/2026-W36.md); the other columns and the charts are untouched. See the [amber spec repo correction of 2026-10-07 (A-cdc3d11a)](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-cdc3d11a.en.md).
+
 Public weekly benchmark results of [CrofAI](https://crof.ai/) models against the private AMBER case suite.
 
 ## What this is
