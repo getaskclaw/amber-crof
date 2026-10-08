@@ -1,4 +1,4 @@
-[English](README.md) · 简体中文
+[简体中文](README.md) · English
 
 # amber-crof
 
